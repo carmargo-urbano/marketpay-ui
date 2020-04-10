@@ -12,7 +12,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.primaryBackground};
+    background: #FFF;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -27,4 +27,17 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+  input {
+    font-family: "Avenir", "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #3D474D;
+    background-color: white;
+    resize: none;
+    border: 1px solid #DCE2E6;
+    padding: 0 12px;
+    line-height: 48px;
+    height: 48px;
+    font-size: 17px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
 `;
