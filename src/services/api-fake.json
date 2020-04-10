@@ -1,11 +1,20 @@
 {
-  "posts": [
+  "store": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+    "id": 1,
+    "name": "Zuca Coffee & Friends",
+    "address": "Sales de Oliveira 510, Taquaral",
+    "city": "Campinas",
+    "state": "SP",
+    "cnpj": "00.000.000/0000-00",
+    "contact_name": "Sidney",
+    "phone": "00 0000-0000",
+    "whatsApp": "00 00000-0000",
+    "takeaway": true,
+    "delivery": true
     }
-  ],
+],
+
   "stock": [
     {
       "id": 1,
