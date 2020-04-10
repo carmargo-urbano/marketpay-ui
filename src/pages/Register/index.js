@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import { Container, FormLogin, FormRegister} from './styles';
+import { toast } from 'react-toastify';
+import { login } from "../../services/auth";
+
 
 import api from '../../services/api';
 import {Link, useHistory} from 'react-router-dom';
-
 
 export default function Register(){
 
@@ -13,6 +15,10 @@ export default function Register(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
  
+    const [username, setUsername] = useState('');
+    const [pass, setPass] = useState('');
+
+     
     async function handleRegister(e){
         e.preventDefault();
 
@@ -21,34 +27,57 @@ export default function Register(){
             email,
             password,
          };
-
-        try {
-            const respose = await api.post('ongs', data);
-            alert(respose.data.id);
-            history.push('/');
+         
+         if (!email || !password || !name)  {
+            toast.error("Preencha nome, e-mail e senha para continuar!");
+         } else {
+            try {
+                const response = await api.post('/users', data);
+                login(response.data.token);
+                history.push("/users/me");
+            }
+            catch(e){
+                toast.error('Não foi possível efetuar seu cadastro. Tente novamente.');
+            }
         }
-        catch(e){
-            alert('erro ao cadastrar');
-        }
-       
-
     }
+    async function handleLogin(e){
+        e.preventDefault();
+        const data = {
+            "email": username,
+            "password": pass,
+         };
+        if (!username || !pass) {
+                toast.error("Preencha e-mail e senha para continuar!" );
+         } else { 
+            try {
+                const response = await api.post('users/login', data);
+                login(response.data.token);
+                history.push('/users/me');
+            }
+            catch(e){
+                toast.error('Não foi possível efetuar o login. Tente novamente.');
+            }
+        }
+    }
+
 
     return (
         <Container>
             <FormLogin>
                 <h2>Entrar</h2>
-                <form onSubmit={handleRegister}>
+                
+                <form onSubmit={handleLogin}>
                     <input 
-                        placeholder="Nome"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
+                        placeholder="Email"
+                        value={username}
+                        onChange={e => setUsername(e.target.value)}
                     />
                     <input 
-                        placeholder="Email" 
-                        type="email" 
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        placeholder="Senha" 
+                        type="password" 
+                        value={pass}
+                        onChange={e => setPass(e.target.value)}
                     />
 
                     <button className="button" type="submit">Entrar</button>
