@@ -18,7 +18,11 @@ export default createGlobalStyle`
     background: #FFF;
     -webkit-font-smoothing: antialiased;
   }
-
+  body.noBanner div.banner,
+  body.noBanner a.profile {
+    display:none;
+  }
+  
   body, input, button {
     font: 14px Montserrat, sans-serif;
   }

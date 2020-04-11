@@ -8,9 +8,6 @@ import { formatPrice } from '../../util/format';
 import * as CartActions from '../../store/modules/cart/actions';
 
 
-import Produtos from '../../services/api-fake'; //lista fake dos produtos,
-
-
 export default function Home() {
   const [products, setProducts] = useState([]);
   const amount = useSelector(state =>

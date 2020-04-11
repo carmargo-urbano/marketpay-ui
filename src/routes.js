@@ -8,7 +8,8 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Profile from './pages/Profile';
 import Register from './pages/Register';
-
+import SignOut from './pages/Default/SignOut';
+import NotFound from './pages/Default/404'
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
@@ -29,8 +30,10 @@ export default function Routes() {
       <Route path="/" exact component={Home} />
       <Route path="/cart" component={Cart} />
       <Route path="/signup" component={Register} />
+      <Route path="/signout" component={SignOut} />
       <PrivateRoute path="/users/me" component={Profile} />
-      <Route path="*" exact component={Home} />
+      <Route path="*" exact component={NotFound} />
+     
     </Switch>
   );
 }

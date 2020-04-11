@@ -5,7 +5,7 @@ import banner from '../../assets/images/promo3.jpg';
 
 export default function Banner() {
     return (
-      <Container>
+      <Container className='banner'> 
         <img src={banner} alt="Marketpay"  />
       </Container>
     );

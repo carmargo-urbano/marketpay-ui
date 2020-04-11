@@ -41,10 +41,11 @@ export const Cart = styled(Link)`
     strong {
       display: block;
       color: #F1F1F0;
+      font-size: 11px;
     }
 
     span {
-      font-size: 12px;
+      font-size: 11px;
       color: #F1F1F0;
     }
   }
@@ -64,12 +65,13 @@ export const SingIn = styled(Link)`
     margin-right: 10px;
 
     strong {
+      font-size: 11px;
       display: block;
       color: #F1F1F0;
     }
 
     span {
-      font-size: 12px;
+      font-size: 11px;
       color: #F1F1F0;
     }
   }

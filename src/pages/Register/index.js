@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Container, FormLogin, FormRegister} from './styles';
 import { toast } from 'react-toastify';
-import { login } from "../../services/auth";
+import { login, setUserName } from "../../services/auth";
 
 
 import api from '../../services/api';
@@ -33,6 +33,7 @@ export default function Register(){
          } else {
             try {
                 const response = await api.post('/users', data);
+                setUserName(response.data.client.name);
                 login(response.data.token);
                 history.push("/users/me");
             }
@@ -53,6 +54,7 @@ export default function Register(){
             try {
                 const response = await api.post('users/login', data);
                 login(response.data.token);
+                setUserName(response.data.client.name);
                 history.push('/users/me');
             }
             catch(e){
