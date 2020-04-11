@@ -11,9 +11,17 @@ export default function Header() {
   return (
     
     <Container>
-      <Link to="/">
+      <Link to="/" class="logo">
         <img src={logo} alt="MarketPay"  />
+       
       </Link>
+      <SingIn to="/signup">
+        <div>
+          <strong>Minha Conta</strong>
+          <span>Entrar</span>
+        </div>
+        <MdAccountBox size={36} color="#F1F1F0" />
+      </SingIn>
       <Cart to="/cart">
         <div>
           <strong>Minhas Compras</strong>
@@ -21,6 +29,8 @@ export default function Header() {
         </div>
         <MdShoppingBasket size={36} color="#F1F1F0" />
       </Cart>
+      
+
     </Container>
   );
 }

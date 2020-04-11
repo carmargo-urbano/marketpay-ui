@@ -19,10 +19,37 @@ export const Container = styled.header`
     top: -15px;
     left: 80px;
   }
-
+  .logo {
+    width: 70%;
+  }
 `;
 
 export const Cart = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  padding-right: 20px;
+  &:hover {
+    opacity: 0.7;
+  }
+
+  div {
+    text-align: right;
+    margin-right: 10px;
+
+    strong {
+      display: block;
+      color: #F1F1F0;
+    }
+
+    span {
+      font-size: 12px;
+      color: #F1F1F0;
+    }
+  }
+`;
+export const SingIn = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
