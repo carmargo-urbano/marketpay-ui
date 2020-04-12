@@ -22,6 +22,7 @@ export const Container = styled.div`
     .separator {
         position: relative;
         padding: 0 25px;
+        margin-top: 150px;
     }
     .separator .vertical-line {
         background-color: ${({ theme }) => theme.primaryDark};;
@@ -43,7 +44,7 @@ export const Container = styled.div`
         text-align: center;
         display: inline-block;
         position: relative;
-        margin-top: 53px;
+        margin-top: 125px;
     }
 
     button {
@@ -60,6 +61,7 @@ export const Container = styled.div`
 `;
 
 export const FormLogin = styled.div`
+    margin-top: 150px;
     width: 400px;
     display: flex;
     flex-flow: column;
@@ -78,6 +80,7 @@ export const FormLogin = styled.div`
 `;
 
 export const FormRegister = styled.div`
+    margin-top: 150px;
     width: 400px;
     display: flex;
     align-items: center;
