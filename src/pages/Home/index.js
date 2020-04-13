@@ -12,7 +12,7 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const amount = useSelector(state =>
     state.cart.reduce((sumAmount, product) => {
-      sumAmount[product.id] = product.amount;
+      sumAmount[product._id] = product.amount;
       return sumAmount;
     }, {})
   );
@@ -22,6 +22,7 @@ export default function Home() {
     async function loadProducts() {
       const response = await api.get('products');
 
+      console.log(response.data);
       const data = response.data.map(product => ({
         ...product,
         priceFormatted: formatPrice(product.price),
@@ -43,17 +44,17 @@ export default function Home() {
   return (
     <ProductList>
       {products.map(product => (
-        <li key={String(product.id)}>
+        <li key={String(product._id)}>
      
         <img src={product.image} alt={product.title} />
         <sup>{product.brand}</sup>        
         <h4>{product.title}</h4>
         <p><span class="price">{product.priceFormatted}</span></p>
 
-        <button type="button" onClick={() => handleAddProduct(product.id)}>
+        <button type="button" onClick={() => handleAddProduct(product._id)}>
           <div>
             <MdAddShoppingCart size={16} color="#fff" />
-            {amount[product.id] || 0}
+            {amount[product._id] || 0}
           </div>
 
           <span>ADICIONAR</span>

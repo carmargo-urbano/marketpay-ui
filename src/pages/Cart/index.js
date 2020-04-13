@@ -28,11 +28,11 @@ export default function Cart() {
   const dispatch = useDispatch();
 
   function increment(product) {
-    dispatch(CartActions.updateAmountRequest(product.id, product.amount + 1));
+    dispatch(CartActions.updateAmountRequest(product._id, product.amount + 1));
   }
 
   function decrement(product) {
-    dispatch(CartActions.updateAmountRequest(product.id, product.amount - 1));
+    dispatch(CartActions.updateAmountRequest(product._id, product.amount - 1));
   }
 
   return (
@@ -84,7 +84,7 @@ export default function Cart() {
                 <button
                   type="button"
                   onClick={() =>
-                    dispatch(CartActions.removeFromCart(product.id))
+                    dispatch(CartActions.removeFromCart(product._id))
                   }
                 >
                   <MdDelete size={20} color="#CF2E2D" />
