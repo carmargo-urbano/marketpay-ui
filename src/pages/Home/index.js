@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
 
+import Banner from '../../components/Banner';
+
 //imports customizados
 import history from '../../services/history';
 import { ProductList } from './styles';
@@ -14,9 +16,6 @@ import * as CartActions from '../../store/modules/cart/actions';
 
 
 export default function Home() {
-
-
-  document.body.classList.remove('noBanner');
 
   const [products, setProducts] = useState([]);
   const amount = useSelector(state =>
@@ -62,6 +61,8 @@ export default function Home() {
   }
 
   return (
+    <div>
+    <Banner />
     <ProductList>
       {products.map(product => (
         <li key={String(product._id)}>
@@ -85,6 +86,6 @@ export default function Home() {
       
     </ProductList>
 
-    
+    </div>
   );
 }

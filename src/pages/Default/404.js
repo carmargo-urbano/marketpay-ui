@@ -1,8 +1,7 @@
 import React from 'react';
 import { Container} from './styles';
 export default function NotFound() {
-    document.body.classList.add('noBanner');
-    return (
+      return (
         <Container>
            <div class="notfound">
             <div class="notfound-404">

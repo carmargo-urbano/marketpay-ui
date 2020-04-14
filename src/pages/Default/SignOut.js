@@ -5,7 +5,6 @@ export default function SignOut() {
 
     logout();
     console.log('logado ' + isAuthenticated());
-    document.body.classList.add('noBanner');
     return (
         <Container>
            <div class="notfound">
