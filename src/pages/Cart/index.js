@@ -10,6 +10,8 @@ import { Container, ProductTable, Total } from './styles';
 import * as CartActions from '../../store/modules/cart/actions';
 import { formatPrice } from '../../util/format';
 
+
+
 export default function Cart() {
   const cart = useSelector(state =>
     state.cart.map(product => ({
@@ -33,6 +35,10 @@ export default function Cart() {
 
   function decrement(product) {
     dispatch(CartActions.updateAmountRequest(product._id, product.amount - 1));
+  }
+  function handleSendOrder(){
+  
+    console.log(cart);
   }
 
   return (
@@ -96,7 +102,7 @@ export default function Cart() {
       </ProductTable>
 
       <footer>
-        <button type="button">Finalizar pedido</button>
+        <button type="button" onClick={() => handleSendOrder()}>Finalizar pedido</button>
 
         <Total>
           <span>TOTAL</span>

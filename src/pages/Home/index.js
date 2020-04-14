@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
 import { useSelector, useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 
-import { ProductList, SectionProduct } from './styles';
+
+//imports customizados
+import history from '../../services/history';
+import { ProductList } from './styles';
 import api from '../../services/api';
+import {isAuthenticated} from '../../services/auth';
 import { formatPrice } from '../../util/format';
 import * as CartActions from '../../store/modules/cart/actions';
 
 
 export default function Home() {
+
+
+  document.body.classList.remove('noBanner');
+
   const [products, setProducts] = useState([]);
   const amount = useSelector(state =>
     state.cart.reduce((sumAmount, product) => {
@@ -37,8 +46,19 @@ export default function Home() {
 
 
   function handleAddProduct(id) {
-    // dispara uma ACTION para o redux
-    dispatch(CartActions.addToCartRequest(id));
+
+    //vefica se esta logado antes de começar a compra
+    if (isAuthenticated()) {
+      // dispara uma ACTION para o redux
+      dispatch(CartActions.addToCartRequest(id));
+    }
+    else {
+      toast.info('Faça seu login para começar suas compras!');
+      history.push('/signup');
+    }
+
+    
+    
   }
 
   return (
