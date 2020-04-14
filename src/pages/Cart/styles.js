@@ -30,7 +30,7 @@ export const Container = styled.div`
 `;
 
 export const ProductTable = styled.table`
-  width: 50%;
+  width: 90%;
   margin-top:10%;
   thead th {
     color: #999;

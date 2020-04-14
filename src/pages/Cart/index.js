@@ -19,13 +19,18 @@ export default function Cart() {
   const cart = useSelector(state =>
     state.cart.map(product => ({
       ...product,
-      subtotal: formatPrice(product.price * product.amount),
+      subtotal: totalByProduct(product, product.amount),
     }))
   );
   const total = useSelector(state =>
     formatPrice(
       state.cart.reduce((totalSum, product) => {
-        return totalSum + product.price * product.amount;
+        if (product.offer) {
+          return totalSum + product.discount * product.amount;
+        }else {
+          return totalSum + product.price * product.amount;
+        }
+       
       }, 0)
     )
   );
@@ -39,6 +44,26 @@ export default function Cart() {
   function decrement(product) {
     dispatch(CartActions.updateAmountRequest(product._id, product.amount - 1));
   }
+
+  function totalByProduct(product, qtde) {
+    if (product.offer) {
+      return formatPrice(product.discount * qtde);
+    }
+    else {
+      return formatPrice(product.price * qtde);
+    }
+}
+
+  function calcDesconto(product) {
+    if (product.offer) {
+      return formatPrice(product.discount - product.price);
+    }
+    else {
+      return '-';
+    }
+  }
+
+
   async function handleSendOrder(){
 
     const data = {items:[]};
@@ -46,7 +71,7 @@ export default function Cart() {
         let item = {
            "amount": product.amount,
            "price": product.price,
-           "product": product._id
+           "product": product._id,
         }
         data.items.push(item);
     });
@@ -69,9 +94,10 @@ export default function Cart() {
       <ProductTable>
         <thead>
           <tr>
-            <th />
             <th>PRODUTO</th>
+            <th>VALOR</th>
             <th>QTD</th>
+            <th>DESCONTO</th>
             <th>SUBTOTAL</th>
             <th />
           </tr>
@@ -83,10 +109,7 @@ export default function Cart() {
               <td>
                 <img src={product.image} alt={product.title} />
               </td>
-              <td>
-                <strong>{product.title}</strong>
-                <span>{product.priceFormatted}</span>
-              </td>
+              <td>{product.priceFormatted}</td>
               <td>
                 <div>
                   <button type="button">
@@ -106,9 +129,8 @@ export default function Cart() {
                   </button>
                 </div>
               </td>
-              <td>
-                <strong>{product.subtotal}</strong>
-              </td>
+              <td>{calcDesconto(product)}</td>
+              <td>{product.subtotal}</td>
               <td>
                 <button
                   type="button"
