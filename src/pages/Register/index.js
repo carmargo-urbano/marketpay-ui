@@ -11,6 +11,7 @@ export default function Register(){
 
     const history = useHistory();
     document.body.classList.add('noBanner');
+    
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

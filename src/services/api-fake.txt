@@ -112,3 +112,16 @@
     }
   ]
 }
+
+ {orders.map((row) => (
+                    <TableRow key={row._id}>
+                      <TableCell component="th" scope="row">
+                        {row.number}
+                      </TableCell>
+                      <TableCell align="center">{correctLabel(row.method)}</TableCell>
+                      <TableCell align="center">{formatDate(new Date(row.createdAt))}</TableCell>
+                      <TableCell align="center">{correctLabel(row.status)}</TableCell>
+                      <TableCell align="center">{formatDate(new Date(row.dateTimeToPick))}</TableCell>
+                    </TableRow>
+                    
+                  ))}

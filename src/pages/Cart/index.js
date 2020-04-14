@@ -6,6 +6,9 @@ import {
   MdDelete,
 } from 'react-icons/md';
 
+import api from '../../services/api';
+import history from '../../services/history';
+import { toast } from 'react-toastify';
 import { Container, ProductTable, Total } from './styles';
 import * as CartActions from '../../store/modules/cart/actions';
 import { formatPrice } from '../../util/format';
@@ -36,9 +39,29 @@ export default function Cart() {
   function decrement(product) {
     dispatch(CartActions.updateAmountRequest(product._id, product.amount - 1));
   }
-  function handleSendOrder(){
-  
-    console.log(cart);
+  async function handleSendOrder(){
+
+    const data = {items:[]};
+    cart.map(product => {
+        let item = {
+           "amount": product.amount,
+           "price": product.price,
+           "product": product._id
+        }
+        data.items.push(item);
+    });
+ //console.log(data);
+    try {
+      const response = await api.post('/orders', data);
+       if (response.data._id) {
+         history.push('/users/me')
+       }
+    
+    }
+    catch(e){
+      toast.error('Não foi possível enviar seu pedido. Tente novamente.');
+    }
+    
   }
 
   return (
