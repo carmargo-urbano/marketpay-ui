@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-
+import Shimmer from "react-shimmer-effect";
 
 import Banner from '../../components/Banner';
 
@@ -63,8 +63,10 @@ export default function Home() {
   return (
     <div>
     <Banner />
+    
     <ProductList>
       {products.map(product => (
+        <Shimmer>
         <li key={String(product._id)}>
      
         <img src={product.image} alt={product.title} />
@@ -82,10 +84,11 @@ export default function Home() {
         </button>
 
       </li>
+      </Shimmer>
       ))}
       
     </ProductList>
-
+   
     </div>
   );
 }

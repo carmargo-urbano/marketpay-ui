@@ -23,7 +23,7 @@ export default function Cart() {
     }))
   );
   const total = useSelector(state =>
-    formatPrice(
+    
       state.cart.reduce((totalSum, product) => {
         if (product.offer) {
           return totalSum + product.discount * product.amount;
@@ -32,7 +32,7 @@ export default function Cart() {
         }
        
       }, 0)
-    )
+
   );
 
   const dispatch = useDispatch();
@@ -75,11 +75,13 @@ export default function Cart() {
         }
         data.items.push(item);
     });
- //console.log(data);
+    data['total'] = total;
+    console.log(data);
     try {
       const response = await api.post('/orders', data);
        if (response.data._id) {
-         history.push('/users/me')
+        toast.info('Pedido enviado, aguarde a confirmação da loja.');
+          history.push('/users/me')
        }
     
     }
@@ -88,7 +90,7 @@ export default function Cart() {
     }
     
   }
-
+  
   return (
     <Container>
       <ProductTable>
@@ -151,7 +153,7 @@ export default function Cart() {
 
         <Total>
           <span>TOTAL</span>
-          <strong>{total}</strong>
+          <strong>{formatPrice(total)}</strong>
         </Total>
       </footer>
     </Container>

@@ -7,8 +7,7 @@ export const Container = styled.header`
   align-items: center;
   margin: 0 auto;
   background:  ${({ theme }) => theme.primaryDark};
-  height: 60px;
-  position: fixed;
+  height: 80px;
   width: 100%;
 
   img {
@@ -29,7 +28,8 @@ export const Cart = styled(Link)`
   align-items: center;
   text-decoration: none;
   transition: opacity 0.2s;
-  padding-right: 20px;
+  padding-right: 80px;
+
   &:hover {
     opacity: 0.7;
   }
@@ -56,6 +56,7 @@ export const SingIn = styled(Link)`
   text-decoration: none;
   transition: opacity 0.2s;
   padding-right: 20px;
+
   &:hover {
     opacity: 0.7;
   }

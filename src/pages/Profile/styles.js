@@ -7,6 +7,7 @@ export const Container = styled.div`
     display: flex-row;
     align-items: center;
     justify-content: center;
+    margin-top:10%;
 }
 `;
 
@@ -19,6 +20,9 @@ export const ContainerTable = styled.div`
     border-radius: 8px;
     box-shadow: 2px 2px #999;
 
+    h1 {
+        margin-top:30px;
+    }
     ul {
         padding: 20px;
     }

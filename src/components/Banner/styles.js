@@ -7,7 +7,6 @@ export const Container = styled.div`
   overflow: hidden;
 
   img {
-    margin-top:30px;
     width: auto;
   }
 `;

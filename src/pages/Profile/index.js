@@ -70,7 +70,7 @@ export default function Profile(){
     return (
  
         <Container>
-            <h1>Minhas Compras</h1>
+            <h1>MINHAS COMPRAS</h1>
             {orders.map((order) => (
               <ContainerTable>
                 <ul>
@@ -114,13 +114,13 @@ export default function Profile(){
                     </TableRow>
                     <TableRow>
                     <TableCell rowSpan={4} />
-                      <TableCell>Tax. Serviço</TableCell>
+                      <TableCell>*Tax. Serviço</TableCell>
                       <TableCell align="right"></TableCell>
                       <TableCell align="right">{formatPrice(2)}</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell colSpan={2}>Total</TableCell>
-                      <TableCell align="right">{formatPrice(2)}</TableCell>
+                      <TableCell align="right">{formatPrice(order.total)}</TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
