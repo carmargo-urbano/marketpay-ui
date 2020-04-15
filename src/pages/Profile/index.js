@@ -22,6 +22,9 @@ const useStyles = makeStyles({
 });
 export default function Profile(){
 
+    var React = require('react');
+    var QRCode = require('qrcode.react');
+
     const [orders, setOrders] = useState([]);
     const history = useHistory();
     const classes = useStyles();
@@ -74,12 +77,22 @@ export default function Profile(){
             {orders.map((order) => (
               <ContainerTable>
                 <ul>
-                    <li><strong>Número:</strong> {order.number}</li>
+                    <li><strong>Cliente:</strong> {order.client.name}</li>
                     <li><strong>Data:</strong> {formatDate(new Date(order.createdAt))}</li>
                     <li><strong>Entrega/Retirada:</strong> {formatDate(new Date(order.dateTimeToPick))}</li>
                     <li><strong>Opção:</strong> {correctLabel(order.method)}</li>
                     <li><strong>Status:</strong> {correctLabel(order.status)}</li>
                 </ul>
+                <QRCode
+                    value={`https://marketpay-ui.herokuapp.com/admin/pedido/${order.number}`}
+                    size={128}
+                    bgColor={"#ffffff"}
+                    fgColor={"#000000"}
+                    level={"L"}
+                    includeMargin={false}
+                    renderAs={"svg"}
+
+                  />
                 <TableContainer component={Paper}>
                 <Table className={classes.table} aria-label="spanning table">
                   <TableHead>

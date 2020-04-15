@@ -80,7 +80,7 @@ export default function Home() {
             {amount[product._id] || 0}
           </div>
 
-          <span>ADICIONAR</span>
+          <span>COMPRAR</span>
         </button>
 
       </li>

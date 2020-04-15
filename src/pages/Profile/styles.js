@@ -25,6 +25,10 @@ export const ContainerTable = styled.div`
     }
     ul {
         padding: 20px;
+        float:left;
+    }
+    svg {
+        float: right;
     }
     ul li {
         list-style-type: none;
