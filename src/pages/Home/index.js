@@ -74,7 +74,7 @@ export default function Home() {
           <div class="product_top_bar">
              <h3>PRODUTOS</h3>
           </div>
-            <ProductList>
+            <ProductList className="mobile-only">
               {products.map(product => (
           
                 <li key={String(product._id)}>

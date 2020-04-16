@@ -3,9 +3,19 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 
+  .desktop-only { 
+    @media (max-width: 700px){ 
+      display: none !important; 
+    } 
+  } 
+  .mobile-only { 
+    @media (max-width: 700px){ 
+      grid-template-columns: repeat(1, 1fr) !important;
+    } 
+  }
 
   * {
     margin: 0;
@@ -68,5 +78,6 @@ font-size: 28px;
   background-color:${({ theme }) => theme.primaryLight};
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.05),inset 0 -1px 0 rgba(0,0,0,.1);
 }
+
 
 `;

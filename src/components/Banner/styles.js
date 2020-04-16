@@ -5,18 +5,18 @@ export const Container = styled.div`
   display: inline-block;
   min-height: calc(100vh - 350px);
   width: 100%;
+
+  background-image: url(${banner});
+  background-position:50%;
+  padding-bottom: 50px;
   
-    background-image: url(${banner});
-    background-position:50%;
-    padding-bottom: 50px;
-  
-    h1 {
-      font-weight: bold;
-      font-size: 28px
-    }
-img {
-  max-width:100%;
-}
+  h1 {
+    font-weight: bold;
+    font-size: 28px
+  }
+  img {
+   max-width:100%;
+  }
 .hero-cta-section {
   padding: 30px 40px 15px;
   position: relative;

@@ -32,19 +32,19 @@ export default function Header() {
   }, []);
   return (
     
-    <Container className="navbar sticky-top navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <Container className="navbar sticky-top navbar-expand-md navbar-dark flex-column flex-md-row bd-navbar">
       <a className="navbar-brand mr-0 mr-md-2" href="/" aria-label="QuickPick">
         <img src={logo} alt="QuickPick" />
       </a>
       <ul className="navbar-nav flex-row ml-md-auto d-none d-md-flex">
         
         <li className="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <MdAccountCircle size={24} color={`${({ theme }) => theme.iconHeaderColor}`} />
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/account">ENTRAR</a>
-            <a class="dropdown-item" href="/user/me">MINHAS COMPRAS</a>
+          <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a className="dropdown-item" href="/account">ENTRAR</a>
+            <a className="dropdown-item" href="/user/me">MINHAS COMPRAS</a>
           </div>
         </li>
         

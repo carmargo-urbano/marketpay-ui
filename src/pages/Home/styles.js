@@ -68,7 +68,7 @@ export const ProductList = styled.ul`
   list-style: none;
   padding: 10px;
 
-
+  
   li {
     display: flex;
     flex-direction: column;
