@@ -15,13 +15,13 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #FFF;
-    -webkit-font-smoothing: antialiased;
+    line-height: 24px;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: normal;
+    color: #777777;
   }
-  body.noBanner div.banner,
-  body.noBanner a.profile {
-    display:none;
-  }
+  
   
   body, input, button {
     font: 14px Montserrat, sans-serif;
@@ -30,7 +30,13 @@ export default createGlobalStyle`
   #root {
     margin: 0 auto;
   }
-
+  header, section, main, nav {
+    display: block;
+  }
+  a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
   button {
     cursor: pointer;
   }
@@ -47,4 +53,16 @@ export default createGlobalStyle`
     border-radius: 10px;
     margin-bottom: 10px;
 }
+.bd-navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1071;
+}
+.bd-navbar {
+  min-height: 4rem;
+  background-color:${({ theme }) => theme.primaryLight};
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.05),inset 0 -1px 0 rgba(0,0,0,.1);
+}
+
 `;

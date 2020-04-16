@@ -7,7 +7,6 @@ import { login, setUserName } from "../../services/auth";
 import api from '../../services/api';
 import {Link, useHistory} from 'react-router-dom';
 
-import banner from '../../assets/images/login.jpg'
 export default function Register(){
 
     const history = useHistory();
@@ -71,48 +70,65 @@ export default function Register(){
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="login_box_img">
-                        <img class="img-fluid" src={banner} alt="ENTRAR" />
+                        <img class="img-fluid" src="img/login.jpg" alt="" />
                         <div class="hover">
-                        <h4>Novo por aqui?</h4>
-                      
-                        <a class="main_btn" href="registration.html">Crie sua conta</a>
+                        <h4>New to our website?</h4>
+                        <p>There are advances being made in science and technology everyday, and a good example of this is the</p>
+                        <a class="main_btn" href="registration.html">Create an Account</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <FormLogin>
-                        <h3>ENTRAR</h3>
-                        
-                        <form onSubmit={handleLogin}>
-                        <div class="col-md-12 form-group">
-                            <input 
-                                class="form-control"
-                                placeholder="Email"
-                                value={username}
-                                onChange={e => setUsername(e.target.value)}
-                            />
-                        </div>
-                        <div class="col-md-12 form-group">   
-                            <input 
-                               class="form-control"
-                                placeholder="Senha" 
-                                type="password" 
-                                value={pass}
-                                onChange={e => setPass(e.target.value)}
-                            />
-                        </div> 
-                        <div class="col-md-12 form-group">&nbsp;</div>
-                        <div class="col-md-12 form-group">
-                            <button className="btn submit_btn" type="submit">Entrar</button>
-                             <a href="#">Esqueceu sua senha?</a>
-                        </div>
-                          
-                        </form>
+                    <h2>Entrar</h2>
+                    
+                    <form onSubmit={handleLogin}>
+                        <input 
+                            placeholder="Email"
+                            value={username}
+                            onChange={e => setUsername(e.target.value)}
+                        />
+                        <input 
+                            placeholder="Senha" 
+                            type="password" 
+                            value={pass}
+                            onChange={e => setPass(e.target.value)}
+                        />
+
+                        <button className="button" type="submit">Entrar</button>
+                     </form>
                      </FormLogin>
                 </div>
             </div>
             
             </div>
+           
+           
+            <FormRegister>
+               
+                <h2>Cadastre-se</h2>
+            
+                <form onSubmit={handleRegister}>
+                    <input 
+                        placeholder="Nome"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                    />
+                    <input 
+                        placeholder="Email" 
+                        type="email" 
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                    />
+                    <input placeholder="*****" 
+                        type="password" 
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                    />
+                    <button className="button" type="submit">Cadastrar</button>
+               </form>
+            </FormRegister>
+
         </Container>
     );
 }

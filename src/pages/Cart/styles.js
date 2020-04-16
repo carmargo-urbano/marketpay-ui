@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.section`
   padding: 30px;
   background: #fff;
   border-radius: 4px;
+  width: 1200px;
+  margin: auto;
 
   footer {
     display: flex;

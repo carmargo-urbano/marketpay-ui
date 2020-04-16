@@ -10,6 +10,11 @@ import Profile from './pages/Profile';
 import Register from './pages/Register';
 import SignOut from './pages/Default/SignOut';
 import NotFound from './pages/Default/404'
+
+//ADMIN 
+import Admin from './pages/Admin/SignIn'
+
+
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
@@ -32,8 +37,11 @@ export default function Routes() {
       <Route path="/signup" component={Register} />
       <Route path="/signout" component={SignOut} />
       <PrivateRoute path="/users/me" component={Profile} />
-      <Route path="*" exact component={NotFound} />
      
+
+      <Route path="/admin" exact component={Admin} />
+     
+      <Route path="*" exact component={NotFound} />
     </Switch>
   );
 }

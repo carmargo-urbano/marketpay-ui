@@ -13,6 +13,7 @@ import { useOnClickOutside } from './util/hook';
 
 import GlobalStyle from './styles/global';
 import Header from './components/Header';
+import Banner from './components/Banner';
 import Footer from './components/Footer';
 import { Burger, Menu } from './components';
 import FocusLock from 'react-focus-lock';
@@ -34,8 +35,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <Router history={history}>
-                 <Header />
-         
+        <Header />
+        <Banner />
          
           <Routes />
           <GlobalStyle />

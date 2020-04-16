@@ -1,25 +1,24 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: 100%;
+    width: 1200px;
     max-width: 1120px;
     margin: 0 auto;
     display: flex-row;
     align-items: center;
     justify-content: center;
-    margin-top:10%;
+    padding: 40px;
 }
 `;
 
 export const ContainerTable = styled.div`
 
-    background: ${({ theme }) => theme.primaryBackground};
     padding: 50px;
     margin-bottom: 50px;
     margin-top: 20px;
     border-radius: 8px;
-    box-shadow: 2px 2px #999;
-
+    box-shadow: 0px 10px 10px 0px rgba(153,153,153,0.1);
+    background: #fff;
     h1 {
         margin-top:30px;
     }

@@ -4,16 +4,17 @@ import styled from 'styled-components';
 export const Container = styled.footer`
     position: relative;
     bottom: 0;
-    width: 100%;
+    max-width: 1200px;
+    margin: auto;
     margin-top: 100px;
+    background: #FFF;
     
   }
  .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-  background: #FFF;
+ 
  }
  .container .marketInfo {
    width:50%;
