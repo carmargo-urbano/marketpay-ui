@@ -8,6 +8,11 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     padding: 40px;
+
+    h1 {
+        font-weight: bold;
+        font-size: 28px;
+    }
 }
 `;
 
@@ -17,7 +22,7 @@ export const ContainerTable = styled.div`
     margin-bottom: 50px;
     margin-top: 20px;
     border-radius: 8px;
-    box-shadow: 0px 10px 10px 0px rgba(153,153,153,0.1);
+     box-shadow: 0 1px 11px 0 rgba(0,0,0,.22);
     background: #fff;
     h1 {
         margin-top:30px;

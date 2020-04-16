@@ -72,7 +72,7 @@ export default function Home() {
         <div class="row flex-row-reverse">
           <div class="col-lg-9">
           <div class="product_top_bar">
-          <h3>PRODUTOS</h3>
+             <h3>PRODUTOS</h3>
           </div>
             <ProductList>
               {products.map(product => (

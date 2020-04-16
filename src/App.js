@@ -9,14 +9,10 @@ import './config/ReactotronConfig';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 
-import { useOnClickOutside } from './util/hook';
-
 import GlobalStyle from './styles/global';
 import Header from './components/Header';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
-import { Burger, Menu } from './components';
-import FocusLock from 'react-focus-lock';
 
 import Routes from './routes';
 import store from './store';
@@ -24,25 +20,18 @@ import history from './services/history';
 
 
 function App() {
-
-  const [open, setOpen] = useState(false);
-  const node = useRef();
-  const menuId = "main-menu";
-
-  useOnClickOutside(node, () => setOpen(false));
-
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <Router history={history}>
-        <Header />
-        <Banner />
+          <Header />
+          <Banner />
          
           <Routes />
           <GlobalStyle />
           
           <Footer />
-          <ToastContainer autoClose={3000} />
+          <ToastContainer autoClose={34000} />
         </Router>
       </Provider>
     </ThemeProvider>

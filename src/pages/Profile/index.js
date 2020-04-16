@@ -73,7 +73,7 @@ export default function Profile(){
     return (
  
         <Container>
-            <h1>MINHAS COMPRAS</h1>
+            <h1>Minhas Compras</h1>
             {orders.map((order) => (
               <ContainerTable>
                 <ul>

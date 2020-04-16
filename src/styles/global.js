@@ -37,6 +37,10 @@ export default createGlobalStyle`
     text-decoration: none;
     outline: none;
 }
+h1 {
+  font-weight: bold;
+font-size: 28px;
+}
   button {
     cursor: pointer;
   }

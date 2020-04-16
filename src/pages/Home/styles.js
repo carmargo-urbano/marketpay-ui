@@ -47,6 +47,7 @@ a:hover, a:focus {
 
 .product_top_bar {
     background: #e8f0f2;
+    box-shadow: 0 1px 11px 0 rgba(0,0,0,.22);
     clear: both;
     display: -webkit-box;
     display: -ms-flexbox;

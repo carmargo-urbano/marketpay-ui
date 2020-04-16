@@ -37,6 +37,7 @@ export default function Header() {
         <img src={logo} alt="QuickPick" />
       </a>
       <ul className="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        
         <li className="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <MdAccountCircle size={24} color={`${({ theme }) => theme.iconHeaderColor}`} />
