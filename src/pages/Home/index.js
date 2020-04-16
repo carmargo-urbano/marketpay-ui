@@ -59,7 +59,7 @@ export default function Home() {
     }
     else {
       toast.info('Faça seu login para começar suas compras!');
-      history.push('/signup');
+      history.push('/account');
     }
 
     
