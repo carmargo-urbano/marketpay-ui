@@ -42,8 +42,7 @@ export default function Header() {
             <MdAccountCircle size={24} color={`${({ theme }) => theme.iconHeaderColor}`} />
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/signin">ENTRAR</a>
-            <a class="dropdown-item" href="/register">CADASTRAR</a>
+            <a class="dropdown-item" href="/account">ENTRAR</a>
             <a class="dropdown-item" href="/user/me">MINHAS COMPRAS</a>
           </div>
         </li>

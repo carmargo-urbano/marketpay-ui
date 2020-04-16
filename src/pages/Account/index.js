@@ -70,14 +70,44 @@ export default function Register(){
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="login_box_img">
-                        <img class="img-fluid" src={banner} alt="ENTRAR" />
-                        <div class="hover">
-                        <h4>Novo por aqui?</h4>
-                      
-                        <a class="main_btn" href="registration.html">Crie sua conta</a>
-                        </div>
-                    </div>
+                    <FormRegister>
+               
+                        <h3>CRIE SUA CONTA</h3>
+                    
+                        <form onSubmit={handleRegister}>
+                            <div class="col-md-12 form-group">
+                                <input 
+                                    class="form-control"
+                                    placeholder="Nome"
+                                    value={name}
+                                    onChange={e => setName(e.target.value)}
+                                />
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input 
+                                    class="form-control"
+                                    placeholder="Email" 
+                                    type="email" 
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                />
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input
+                                    class="form-control" 
+                                    placeholder="Senha" 
+                                    type="password" 
+                                    value={password}
+                                    onChange={e => setPassword(e.target.value)}
+                                />
+                            </div>
+                            <div class="col-md-12 form-group">&nbsp;</div>
+                            <div class="col-md-12 form-group">
+                                <button  className="btn submit_btn" type="submit">Cadastrar</button>
+                            </div>
+                            
+                        </form>
+                    </FormRegister>
                 </div>
                 <div class="col-lg-6">
                     <FormLogin>

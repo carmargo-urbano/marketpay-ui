@@ -7,7 +7,7 @@ import { isAuthenticated } from "./services/auth";
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Profile from './pages/Profile';
-import Register from './pages/Register';
+import Account from './pages/Account/';
 import SignOut from './pages/Default/SignOut';
 import NotFound from './pages/Default/404'
 
@@ -34,7 +34,7 @@ export default function Routes() {
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/cart" component={Cart} />
-      <Route path="/signup" component={Register} />
+      <Route path="/account" component={Account} />
       <Route path="/signout" component={SignOut} />
       <PrivateRoute path="/users/me" component={Profile} />
      
