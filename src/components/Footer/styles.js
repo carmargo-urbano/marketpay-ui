@@ -26,6 +26,6 @@ export const Container = styled.footer`
  p {
   font-size: 12px;
   line-height: 21px;
-  color: #6f6f6f;
+  color: #333;
  }
 `;

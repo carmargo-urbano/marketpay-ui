@@ -31,7 +31,7 @@ function App() {
           <GlobalStyle />
           
           <Footer />
-          <ToastContainer autoClose={34000} />
+          <ToastContainer autoClose={3000} />
         </Router>
       </Provider>
     </ThemeProvider>
