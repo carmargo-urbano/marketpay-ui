@@ -122,24 +122,16 @@ export const FormLogin = styled.div`
     }
     button {
         display: inline-block;
-        background: #c5322d;
+        background: ${({ theme }) => theme.primaryLight};
         padding: 0 30px;
         color: #fff;
         font-family: roboto,sans-serif;
         font-size: 14px;
         font-weight: 500;
         line-height: 38px;
-        border: 1px solid #c5322d;
+        border: 1px solid ${({ theme }) => theme.primaryLight};
         border-radius: 0;
         outline: none !important;
-        -webkit-box-shadow: none !important;
-        box-shadow: none !important;
-        text-align: center;
-        border: 1px solid #c5322d;
-        cursor: pointer;
-        -webkit-transition: all 300ms linear 0s;
-        -o-transition: all 300ms linear 0s;
-        transition: all 300ms linear 0s;
     }
     .form-group a {
         font-size: 14px;
@@ -182,23 +174,16 @@ export const FormRegister = styled.div`
     }
     button {
         display: inline-block;
-        background: #c5322d;
+        background: ${({ theme }) => theme.primaryLight};
         padding: 0 30px;
         color: #fff;
         font-family: roboto,sans-serif;
         font-size: 14px;
         font-weight: 500;
         line-height: 38px;
-        border: 1px solid #c5322d;
+        border: 1px solid ${({ theme }) => theme.primaryLight};
         border-radius: 0;
         outline: none !important;
-        -webkit-box-shadow: none !important;
-        box-shadow: none !important;
-        text-align: center;
-        border: 1px solid #c5322d;
-        cursor: pointer;
-        -webkit-transition: all 300ms linear 0s;
-        -o-transition: all 300ms linear 0s;
         transition: all 300ms linear 0s;
     }
     .form-group a {
