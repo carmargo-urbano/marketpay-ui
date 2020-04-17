@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { MdShoppingCart, MdAccountCircle } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 
-import { Container, SingIn, Cart } from './styles';
+import { Container, HeaderLink, SingIn, Cart } from './styles';
 import logo from '../../assets/images/logo.svg';
 import { isAuthenticated, getUserName } from '../../services/auth';
 
@@ -32,25 +32,33 @@ export default function Header() {
   }, []);
   return (
     
-    <Container className="navbar sticky-top navbar-expand-md navbar-dark flex-column flex-md-row bd-navbar">
-      <a className="navbar-brand mr-0 mr-md-2" href="/" aria-label="QuickPick">
-        <img src={logo} alt="QuickPick" />
-      </a>
-      <ul className="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+    <Container className="navbar navbar-expand-lg navbar-dark  fixed-top">
+      <div class="container">
+        <HeaderLink className="navbar-brand" to='/' aria-label="QuickPick">
+           <img src={logo} alt="QuickPick" />
+        </HeaderLink>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul className="navbar-nav ml-auto">
+            
+            <li className="nav-item">
+              <HeaderLink to="/account" className="nav-link p-2">
+                <MdAccountCircle size={24} color={`${({ theme }) => theme.iconHeaderColor}`} />
+              </HeaderLink>
+            </li>
+            
+            <li className="nav-item">
+                <HeaderLink to="/cart" className="nav-link p-2">
+                  <span>{cartSize}</span>
+                <MdShoppingCart size={24} color={`${({ theme }) => theme.iconHeaderColor}`} />
+              </HeaderLink>
+            </li>
+          </ul>
+        </div>
         
-        <li className="nav-item dropdown">
-            <SingIn to="/account" className="nav-link p-2">
-            <MdAccountCircle size={24} color={`${({ theme }) => theme.iconHeaderColor}`} />
-          </SingIn>
-        </li>
-        
-        <li className="nav-item">
-            <Cart to="/cart" className="nav-link p-2">
-              <span>{cartSize}</span>
-            <MdShoppingCart size={24} color={`${({ theme }) => theme.iconHeaderColor}`} />
-          </Cart>
-        </li>
-      </ul>
+      </div>
     </Container>
   );
 }

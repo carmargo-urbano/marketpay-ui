@@ -69,11 +69,30 @@ export default function Home() {
   return (
     <Container className="cat_product_area p_120">
       <div class="container">
-        <div class="row flex-row-reverse">
-          <div class="col-lg-9">
-          <div class="product_top_bar">
-             <h3>PRODUTOS</h3>
+        <div class="row">
+        <div class="col-lg-3">
+
+          <div class="left_sidebar_area">
+            <aside class="left_widgets cat_widgets">
+            <div class="l_w_title">
+            <h3>CATEGORIAS</h3>
+            </div>
+              <div class="widgets_inner">
+              <ul class="list">
+                  {
+                    categories.map(key =>(
+                      <li><a href="">{key}</a></li>
+                    ))
+                  }
+              </ul>
+              </div>
+            </aside>
           </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="product_top_bar">
+              <h3>PRODUTOS</h3>
+            </div>
             <ProductList className="mobile-only">
               {products.map(product => (
           
@@ -98,26 +117,7 @@ export default function Home() {
               
             </ProductList>
           </div>
-          <div class="col-lg-3">
-
-          <div class="left_sidebar_area">
-          <aside class="left_widgets cat_widgets">
-          <div class="l_w_title">
-          <h3>CATEGORIAS</h3>
-          </div>
-            <div class="widgets_inner">
-            <ul class="list">
-                {
-                  categories.map(key =>(
-                    <li><a href="">{key}</a></li>
-                  ))
-                }
-            </ul>
-            </div>
-          </aside>
           
-          </div>
-        </div>
         </div>
        </div>
     </Container>

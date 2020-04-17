@@ -9,6 +9,7 @@ export const Container = styled.div`
   background-image: url(${banner});
   background-position:50%;
   padding-bottom: 50px;
+  padding-top: 50px;
   
   h1 {
     font-weight: bold;
