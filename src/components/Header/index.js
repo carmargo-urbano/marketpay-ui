@@ -39,19 +39,16 @@ export default function Header() {
       <ul className="navbar-nav flex-row ml-md-auto d-none d-md-flex">
         
         <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <SingIn to="/account" className="nav-link p-2">
             <MdAccountCircle size={24} color={`${({ theme }) => theme.iconHeaderColor}`} />
-          </a>
-          <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a className="dropdown-item" href="/account">ENTRAR</a>
-            <a className="dropdown-item" href="/user/me">MINHAS COMPRAS</a>
-          </div>
+          </SingIn>
         </li>
         
         <li className="nav-item">
-          <a className="nav-link p-2" href="/cart">
+            <Cart to="/cart" className="nav-link p-2">
+              <span>{cartSize}</span>
             <MdShoppingCart size={24} color={`${({ theme }) => theme.iconHeaderColor}`} />
-          </a>
+          </Cart>
         </li>
       </ul>
     </Container>
